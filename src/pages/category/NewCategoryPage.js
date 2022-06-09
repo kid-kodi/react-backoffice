@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 
 import { AuthContext } from "../../contexts/AuthContext";
-import { useHistory, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { FetchWrapper } from "../../helpers/apiRequest";
 import { GET_CATEGORIES, NEW_CATEGORY } from "../../constants/apiEndpoints";
 import { CameraIcon } from "@heroicons/react/outline";
@@ -16,7 +16,7 @@ import "react-quill/dist/quill.snow.css";
 const NewCategoryPage = () => {
   const [savedCategory, setSavedCategory] = useState(null);
 
-  const history = useHistory();
+  const navigate = useNavigate();
   const httpRequest = FetchWrapper();
   const categoryId = useParams().id;
 
@@ -53,7 +53,7 @@ const NewCategoryPage = () => {
         console.log(JSON.stringify(values, null, 2));
         actions.setSubmitting(false);
       }, 3000);
-      history.push("/categories");
+      navigate("/categories");
     }
   };
 
@@ -67,7 +67,7 @@ const NewCategoryPage = () => {
         console.log(JSON.stringify(values, null, 2));
         actions.setSubmitting(false);
       }, 3000);
-      history.push("/");
+      navigate("/categories");
     }
   };
 
@@ -75,7 +75,7 @@ const NewCategoryPage = () => {
     <div className="max-w-7xl mx-auto sm:px-16">
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl w-full space-y-8">
-          <h1 className="text-2xl">Nouvel article</h1>
+          <h1 className="text-2xl">Nouvel catégorie d'article</h1>
           <Formik
             initialValues={savedCategory || initialValues}
             validationSchema={validationSchema}
@@ -133,7 +133,7 @@ const NewCategoryPage = () => {
                     </button>
                     <a
                       className="flex items-center border-2 border-blue-400 justify-center bg-white text-blue-600 rounded-full px-4 py-2 hover:bg-blue-100"
-                      href="/"
+                      href="/categories"
                     >
                       Annuler
                     </a>

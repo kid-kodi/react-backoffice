@@ -1,18 +1,18 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { useHistory, useParams } from "react-router";
-import { FetchWrapper } from "../helpers/apiRequest";
+import { FetchWrapper } from "../../helpers/apiRequest";
 import {
   GET_CATEGORIES,
   GET_POSTS,
   NEW_POSTS,
   UPLOAD_IMG,
-} from "../constants/apiEndpoints";
+} from "../../constants/apiEndpoints";
 import { CameraIcon } from "@heroicons/react/outline";
 
 import * as Yup from "yup";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import { Checkbox, CheckboxGroup } from "../components/Input";
+import { Checkbox, CheckboxGroup } from "../../components/Input";
 
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";

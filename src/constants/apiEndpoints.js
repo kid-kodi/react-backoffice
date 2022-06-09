@@ -1,10 +1,10 @@
-// export const SOCKET_URL = "http://localhost:2000";
-// export const BASE_URL = "http://localhost:2000/api/admin";
-// export const FILE_URL = "http://localhost:2000/api";
+export const SOCKET_URL = "http://localhost:2000";
+export const BASE_URL = "http://localhost:2000/api/admin";
+export const FILE_URL = "http://localhost:2000/api";
 
-export const SOCKET_URL = "/";
-export const BASE_URL = "/api/admin";
-export const FILE_URL = "/api";
+// export const SOCKET_URL = "/";
+// export const BASE_URL = "/api/admin";
+// export const FILE_URL = "/api";
 
 export const REGISTER = BASE_URL + "/auth/register";
 export const LOGIN = BASE_URL + "/auth/login";
@@ -26,9 +26,15 @@ export const NEW_POSTS = BASE_URL + "/posts/create";
 
 // Category end point
 export const GET_POSTS_BY_CATEGORY = BASE_URL + "/posts/category/";
+export const GET_ITEMS_BY_CATEGORY = BASE_URL + "/items/category/";
 export const GET_CATEGORIES = BASE_URL + "/categories/";
 export const NEW_CATEGORY = BASE_URL + "/categories/create";
 
-// Blog End point
+// Users End point
 export const GET_USERS = BASE_URL + "/users/";
 export const NEW_USER = BASE_URL + "/users/create";
+
+// Blog Items point
+export const GET_LIST_ITEMS = BASE_URL + "/items/list";
+export const GET_ITEMS = BASE_URL + "/items/";
+export const NEW_ITEM = BASE_URL + "/items/create";

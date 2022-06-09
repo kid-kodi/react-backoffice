@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 
 import { AuthContext } from "../../contexts/AuthContext";
-import { useHistory, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { FetchWrapper } from "../../helpers/apiRequest";
 import { GET_USERS, NEW_USER } from "../../constants/apiEndpoints";
 import { CameraIcon } from "@heroicons/react/outline";
@@ -17,7 +17,7 @@ import { countryList } from "../../Countries";
 const NewUserPage = () => {
   const [savedUser, setSavedUser] = useState(null);
   const [countries, setCountries] = useState(countryList);
-  const history = useHistory();
+  const navigate = useNavigate();
   const httpRequest = FetchWrapper();
   const userId = useParams().id;
 
@@ -64,7 +64,7 @@ const NewUserPage = () => {
         console.log(JSON.stringify(values, null, 2));
         actions.setSubmitting(false);
       }, 3000);
-      history.push("/users");
+      navigate("/users");
     }
   };
 
@@ -75,7 +75,7 @@ const NewUserPage = () => {
         console.log(JSON.stringify(values, null, 2));
         actions.setSubmitting(false);
       }, 3000);
-      history.push("/");
+      navigate("/users");
     }
   };
 
